@@ -8,9 +8,8 @@ class Event(models.Model):
     date = models.DateField()
     baby = models.ForeignKey(
         'babies.Baby',
-        on_delete=models.SET_NULL,
-        null=True
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
-        return 'Event: {}'.format(self.name)
+        return 'Event: {}'.format(self.notes)
